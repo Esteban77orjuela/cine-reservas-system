@@ -32,6 +32,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="ApiGateway" target="17" />
       <module name="booking-service (1)" target="17" />
       <module name="cine-reservas-system" target="1.5" />
     </bytecodeTargetLevel>
