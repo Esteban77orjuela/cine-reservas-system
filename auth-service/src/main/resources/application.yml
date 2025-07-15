@@ -1,15 +1,8 @@
 spring:
   application:
     name: auth-service
-  datasource:
-    url: jdbc:h2:mem:testdb
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
-  jpa:
-    hibernate:
-      ddl-auto: none
-    show-sql: false
+server:
+  port: 8081
 
 eureka:
   client:
@@ -17,7 +10,4 @@ eureka:
       defaultZone: http://localhost:8761/eureka
   instance:
     prefer-ip-address: true
-
-server:
-  port: 0
-
+    instance-id: auth-service:${random.value}  # para evitar conflictos de registro duplicado
