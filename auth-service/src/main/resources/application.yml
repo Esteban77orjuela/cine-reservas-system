@@ -1,13 +1,21 @@
 spring:
   application:
     name: auth-service
-server:
-  port: 8081
+
+  flyway:
+    enabled: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/auth_service_db
+    username: postgres
+    password: segura123
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
 
 eureka:
   client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-  instance:
-    prefer-ip-address: true
-    instance-id: auth-service:${random.value}  # para evitar conflictos de registro duplicado
+    enabled: false
